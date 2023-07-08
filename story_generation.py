@@ -5,7 +5,7 @@ openai.api_key = "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" # API Key
 prompt = 'a drawing of a boy kicking a soccer ball on a field'   # prompt 입력 받는 부분 
 model="gpt-3.5-turbo"
 temperature= 0.2          
-
+ 
 # promt를 바탕으로 영어 동화 생성
 messages_story_eng =[{"role": "user",
                         "content": "%s Use this sentence to create a short children's story with a twist."%prompt}]
