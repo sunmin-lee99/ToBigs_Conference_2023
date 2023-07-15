@@ -34,7 +34,7 @@ temperature= 0.2
 
 # promt를 바탕으로 영어 동화 생성
 messages_story_eng =[{"role": "user",
-                        "content": "%sUse this sentence to create a child story with a twist of up to 1000 characters."%prompt}]
+                        "content": "%s Use this sentence to create a child story with a twist of up to 1000 characters."%prompt}]
 
 completion_story_eng = openai.ChatCompletion.create(
     model= model,
