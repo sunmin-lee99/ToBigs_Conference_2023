@@ -34,7 +34,8 @@ temperature= 0.2
 
 # promt를 바탕으로 영어 동화 생성
 messages_story_eng =[{"role": "user",
-                        "content": "%s Use this sentence to create a child story with a twist of up to 1000 characters."%prompt}]
+                        "content": "%s Use this prompt to create a very short fairy tale that even newborns can understand.\
+                        Leave out the fantasy stuff."%prompt}]
 
 completion_story_eng = openai.ChatCompletion.create(
     model= model,
@@ -65,8 +66,8 @@ print(completion_story_kor.choices[0].message.content)  # 이 부분 return 으�
 st.divider()"""
 # 위에서 생성한 영어 동화를 바탕으로 장면을 생성하기 좋은 프롬프트로 변경 
 messages_story_prompt =[{"role": "user",
-                        "content": "%s  Generate appropriate prompts for each scene, such as 'banana on the dish', \
-                        so that a picture can be created based on this story."%completion_story_eng.choices[0].message.content}]
+                        "content": "%s Divide this fairy tale into 10 scenes and generate a short 10-character description for each scene with a character."\
+                        %completion_story_eng.choices[0].message.content}]
 
 completion_story_prompt = openai.ChatCompletion.create(
     model= model,
